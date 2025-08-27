@@ -6,6 +6,7 @@ export default function Home() {
         <h1 className="text-2xl font-bold text-blue-600">EduVault</h1>
         <nav className="space-x-6">
           <a href="#resources" className="hover:text-blue-500">资源</a>
+          <a href="#categories" className="hover:text-blue-500">分类</a>
           <a href="#about" className="hover:text-blue-500">关于</a>
           <a href="#subscribe" className="hover:text-blue-500">订阅</a>
         </nav>
@@ -59,6 +60,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Categories Section */}
+      <section id="categories" className="px-6 py-16 bg-gray-100">
+        <h3 className="text-2xl font-semibold mb-8 text-center">资源分类</h3>
+        <div className="grid md:grid-cols-4 gap-6 text-center">
+          {[
+            { title: "STEM", desc: "科学、技术、工程和数学资源" },
+            { title: "语言学习", desc: "英语、中文、西班牙语等免费课程" },
+            { title: "商业管理", desc: "市场、创业、金融与领导力" },
+            { title: "艺术与人文", desc: "历史、哲学、音乐和艺术" }
+          ].map((cat, i) => (
+            <div
+              key={i}
+              className="p-6 bg-white rounded-2xl shadow hover:shadow-lg"
+            >
+              <h4 className="text-xl font-bold mb-2 text-blue-600">{cat.title}</h4>
+              <p className="text-gray-600">{cat.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Subscription Section */}
       <section id="subscribe" className="bg-blue-50 px-6 py-16 text-center">
         <h3 className="text-2xl font-semibold mb-6">为什么要订阅？</h3>
@@ -73,7 +95,7 @@ export default function Home() {
           target="_blank"
           className="inline-block px-6 py-3 bg-green-600 text-white rounded-2xl shadow hover:bg-green-700 mr-4"
         >
-          通过 Ko‑fi 支持
+          通过 Ko-fi 支持
         </a>
         <a
           href="https://paypal.me/101club"
